@@ -67,6 +67,9 @@
 	text-align: left;
 	display: inline;
 }
+#main-content-1 .next-line {
+	margin-left: -227px;
+}
 /*for small screens*/
 @media (max-width:600px){
 #choose{
@@ -80,5 +83,8 @@
 	}
 .line {
 	margin-left: 20%;
+}
+	#main-content-1 .next-line {
+	margin-left: -220px;
 }
 }
