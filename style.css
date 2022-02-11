@@ -70,11 +70,12 @@
 /*for small screens*/
 @media (max-width:600px){
 #choose{
-	margin-left: 20%;
+	margin-left: 5%;
+	width:350px;
 }
 .w3-grey{
-	margin-left: 5%;
-	width: 450px;
+	margin-left: 1%;
+	width: 400px;
 	}
 .line {
 	margin-left: 20%;
