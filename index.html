@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>License Renewal Portal</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript">
+		function call(){
+			cache();
+		}
+		function cache() {
+    let form = document.getElementById("eform");
+    let inputs = form.children;
+    for (let i = 0; i < inputs.length; i++) {
+        let el = inputs[i];
+        if (el.tagName.toLowerCase() != "input" || el.attributes["type"].value != "text") {
+        	continue;
+        }
+        let cachedVal = localStorage.getItem(el.attributes["name"].value)
+        if (cachedVal != null) {
+            el.value = cachedVal;
+        }
+    }
+}
+	</script>
+</head>
+<body onload="call()">
+<div id="header">
+	<a href="index.html"><img style="height: 80px"src="images\logo.png"></a>
+</div>
+<div id="main-content-1">
+	<h1>DRIVING LICENCE RENEWAL</h1>
+	<h2>Lets get started</h2>
+	<span>Add your details(As per your registered details)</span><br><br>
+	<form action="page2.html" method="post" id="eform">
+		<input class="input-name"type="text" name="name" placeholder="Your Name" required pattern="[A-Za-z\s]{5,30}" title="Your name must contain text only(5 to 30 letters only)" onchange="progress()"oninput="cacheInput(this)"><br><br>
+		<span style="margin-left: -140px;">Nature of driving license?</span><br><br>
+		<div id="choose"><p style="background-color: #e6e6ff;" class="line2">
+			<input type="radio" id="type" name="type" value="private"required onchange="progress()">
+        <label for="type">&nbsp;Private</label></p>&nbsp;
+        <p style="background-color: #e6e6ff; margin-left: 82px;" class="line2"><input type="radio" id="type1" name="type" value="commercial"required onchange="progress()">
+        <label for="type1">&nbsp;Commercial</label></p></div><br><br><br>
+        <input class="input-next"type="submit" name="Next" value="Next"><br><br><br>
+          <div class="w3-grey">
+  <div id="bar"class="w3-black" style="height:5px;width:0%;"></div>
+</div><br>
+	</form>
+</div>
+<script>
+function progress() {
+	var x=document.getElementsByTagName('input');
+  var elem = document.getElementById("bar");
+  var count =0; 
+  var width =1;
+  for (var i = 0; i < 2; i++) {
+   	if (x[i].value!= "") {count++;}
+   } 
+  width = count*10;
+  elem.style.width = width + '%'; }
+  function cacheInput(e) {
+    localStorage.setItem(e.attributes["name"].value, e.value)
+}
+</script>
+</body>
+</html>

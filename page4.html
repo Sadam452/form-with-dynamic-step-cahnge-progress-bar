@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>License Renewal Portal</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div id="header">
+	<a href="index.html"><img style="height: 80px"src="images\logo.png"></a>
+</div>
+<div id="main-content-1">
+	<h1>DRIVING LICENCE RENEWAL</h1>
+	<h2>Lets get started</h2>
+	<span>Add your details(As per your registered details)</span><br>
+	<h2>ADDITIONAL REQUIREMENT</h2>
+	<span>If previous Driving License was issued from different city than</span><br> <span style="margin-left: -227px;">current place of residence?</span><br>
+	<form action="#" method="post">
+		<p style="background-color: #e6e6ff;" class="line"><input type="radio" id="type1" name="type" value="1"required onchange="progress()">
+        <label for="type1">&nbsp;NOC available from previous city</label></p>
+        <p style="background-color: #e6e6ff;" class="line"><input type="radio" id="type2" name="type" value="2"required onchange="progress()">
+        <label for="type2">&nbsp;NOC not available from previous city</label></p>
+        <p style="background-color: #e6e6ff;" class="line"><input type="radio" id="type3" name="type" value="3"required onchange="progress()">
+        <label for="type3">&nbsp;Same city, NOC not required</label></p><br>
+		<input class="input-next"type="submit" name="Submit" value="Submit"><br><br><br>
+    </form>
+<div class="w3-grey">
+<div id="bar"class="w3-black" style="height:5px;width:80%;">
+</div></div><br>
+</div>
+<script>
+function progress() {
+	var x=document.getElementsByTagName('input');
+  var elem = document.getElementById("bar");
+  var count =0; 
+  var width =80;
+   	if (x[0].value!= "")
+   		count++; 
+  width = width + count*10;
+  elem.style.width = width + '%'; }
+</script>
+</body>
+</html>

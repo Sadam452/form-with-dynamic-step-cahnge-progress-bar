@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>License Renewal Portal</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript">
+		function call() {
+			progress();
+		}
+	</script>
+</head>
+<body onload="call()">
+<div id="header">
+	<a href="index.html"><img style="height: 80px"src="images\logo.png"></a>
+</div>
+<div id="main-content-1">
+	<h1>DRIVING LICENCE RENEWAL</h1>
+	<h2>Lets get started</h2>
+	<span>Add your details(As per your registered details)</span><br><br>
+	<form action="page3.html" method="post">
+		    <select class="input-select"type="number"required onchange="progress();nextStep();">
+		    	<option value=""selected>Issued year of license*</option>
+		    	<option value="2010">2010</option>
+		    	<option value="2011">2011</option>
+		    	<option value="2012">2012</option>
+		    	<option value="2013">2013</option>
+		    </select><br>
+		    <select class="input-select" type="number"required onchange="progress();nextStep();">
+		    	<option value=""selected>Expiring year of license*</option>
+		    	<option value="2010">2010</option>
+		    	<option value="2011">2011</option>
+		    	<option value="2012">2012</option>
+		    	<option value="2013">2013</option>
+		    </select><br>
+		    <select class="input-select" type="text"required onchange="progress();nextStep();">
+		    	<option value=""selected>Issued place of D.L*</option>
+		    	<option value="Delhi">Delhi</option>
+		    	<option value="Mumbai">Mumbai</option>
+		    	<option value="J&K">J&K</option>
+		    	<option value="Kerela">Kerela</option>
+		    </select><br><br><br></form>
+        <button class="input-next"onclick="window.location.href='index.html'">< &nbsp;Back</button><br><br><br>
+          <div class="w3-grey">
+  <div id="bar"class="w3-black" style="height:5px;width:20%;"></div>
+</div><br>
+</div>
+<script>
+function progress() {
+	var x=document.getElementsByTagName('select');
+  var elem = document.getElementById("bar");
+  var count =0; 
+  var width =20;
+  for (var i = 0; i < 3; i++) {
+   	if (x[i].value!= "") {count++;}
+   } 
+  width = width + count*10;
+  elem.style.width = width + '%'; }
+  function nextStep(){
+  	var x=document.getElementsByTagName('select');
+  	if(x[0].value!= "" && x[1].value!= "" && x[2].value != "")
+  	{window.location = "http://localhost/assignment/page3.html";}
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>License Renewal Portal</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript">
+		function call(){
+			progress();
+		}
+	</script>
+</head>
+<body onload="call()">
+<div id="header">
+	<a href="index.html"><img style="height: 80px"src="images\logo.png"></a>
+</div>
+<div id="main-content-1">
+	<h1>DRIVING LICENCE RENEWAL</h1>
+	<h2>Lets get started</h2>
+	<span>Add your details(As per your registered details)</span><br>
+	<h2>Proof Of Current Entities</h2><br>
+	<form action="page4.html" method="post">
+		    <select class="input-select" type="number"required onchange="progress();nextStep();">
+		    	<option value=""selected>Available proof of D.O.B*</option>
+		    	<option value="1">10th certificate</option>
+		    	<option value="2">School leaving certificate</option>
+		    	<option value="3">PAN card</option>
+		    	<option value="4">Passport</option>
+		    </select><br>
+		    <select class="input-select" type="number"required onchange="progress();nextStep();">
+		    	<option value=""selected>Address proof available*</option>
+		    	<option value="1">Voter I.D card</option>
+		    	<option value="2">Electricity Bill</option>
+		    	<option value="3">Passport</option>
+		    	<option value="4">Govt. Bank account</option>
+		    	<option value="5">Adhaar Card</option>
+		    </select><br>
+		    <select class="input-select" type="text"required onchange="progress();nextStep();">
+		    	<option value=""selected>Current place of D.L*</option>
+		    	<option value="Delhi">Delhi</option>
+		    	<option value="Mumbai">Mumbai</option>
+		    	<option value="J&K">J&K</option>
+		    	<option value="Kerela">Kerela</option>
+		    	<option value="Chenai">Chenai</option>
+		    	<option value="Ranchi">Ranchi</option>
+		    </select><br><br><br></form>
+		    <button class="input-next"onclick="window.location.href='page2.html'">< &nbsp;Back</button><br><br><br>
+<div class="w3-grey">
+<div id="bar"class="w3-black" style="height:5px;width:0%;">
+</div></div><br>
+</div>
+<script>
+function progress() {
+	var x=document.getElementsByTagName('select');
+  var elem = document.getElementById("bar");
+  var count =0; 
+  var width =50;
+  for (var i = 0; i < 3; i++) {
+   	if (x[i].value!= "") {count++;}
+   } 
+  width = width + count*10;
+  elem.style.width = width + '%'; }
+ function nextStep(){
+  	var x=document.getElementsByTagName('select');
+  	if(x[0].value!= "" && x[1].value!= "" && x[2].value != "")
+  	{window.location = "http://localhost/assignment/page4.html";}
+  }
+</script>
+</body>
+</html>
