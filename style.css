@@ -71,11 +71,12 @@
 @media (max-width:600px){
 #choose{
 	margin-left: 5%;
-	width:350px;
+	width:400px;
 }
 .w3-grey{
 	margin-left: 1%;
-	width: 400px;
+	width: 350px;
+	overflow: hidden;
 	}
 .line {
 	margin-left: 20%;
